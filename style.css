@@ -1,0 +1,327 @@
+/* Container styles */
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 2rem, 3rem);
+  background-color: #00002f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: clamp(2vh, 3vh, 4vh);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+/* Tree structure */
+.tree {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  margin-top: 2vh;
+}
+
+.circle {
+  background: linear-gradient(45deg, white, #a9d49f, #326338, #012b0e);
+  border-radius: 100%;
+  aspect-ratio: 3/1;
+  box-shadow: 2px 10px 28px -6px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+}
+
+/* Circle sizes with improved responsive values */
+.circle1 {
+  width: clamp(280px, 90%, 580px);
+  z-index: 1;
+}
+
+.circle2 {
+  width: clamp(250px, 80%, 520px);
+  margin-bottom: clamp(-4vh, -6vh, -8vh);
+  z-index: 20;
+  rotate: 5deg;
+}
+
+.circle3 {
+  width: clamp(200px, 70%, 420px);
+  margin-bottom: clamp(-4vh, -6vh, -8vh);
+  z-index: 30;
+  rotate: -3deg;
+}
+
+.circle4 {
+  width: clamp(160px, 60%, 340px);
+  margin-bottom: clamp(-3vh, -4vh, -5vh);
+  z-index: 40;
+  rotate: 1deg;
+}
+
+.circle5 {
+  width: clamp(120px, 48%, 260px);
+  margin-bottom: clamp(-1vh, -2vh, -3vh);
+  z-index: 50;
+  rotate: -12deg;
+}
+
+/* Tree topper image */
+.img {
+  width: clamp(80px, 32%, 160px);
+  aspect-ratio: 1/1.1;
+  margin-bottom: clamp(-4vh, -6vh, -8vh);
+  z-index: 60;
+}
+
+/* Orbit styles */
+.orbit {
+  border-radius: 100%;
+  aspect-ratio: 3/1;
+  position: absolute;
+  pointer-events: none;
+}
+
+.orbit1 {
+  width: calc(72% + 20px);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-right: none;
+  z-index: 11;
+  rotate: 19deg;
+  bottom: 1vh;
+}
+
+.orbit2 {
+  width: calc(100% + 20px);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-left: none;
+  z-index: 31;
+  rotate: -17deg;
+  bottom: 20%;
+}
+
+.orbit3 {
+  width: calc(100% + 20px);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-right: none;
+  z-index: 51;
+  rotate: 24deg;
+  bottom: 15%;
+}
+
+/* Ornament base styles */
+.ornament {
+  position: absolute;
+  width: clamp(20px, 4vw, 40px);
+  height: clamp(20px, 4vw, 40px);
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Individual ornament styles with improved positioning */
+.orbit1 .ornament {
+  animation: float 3s infinite ease-in-out;
+}
+
+.ornament1 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e1b2b2,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    radial-gradient(circle, #e41b58, #be2b57);
+  left: 10%;
+  bottom: 2%;
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
+}
+
+.ornament2 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e7dddd,
+      rgba(215, 0, 0, 0) 20%
+    ),
+    radial-gradient(circle, #1cabda, #0d718c);
+  left: 50%;
+  bottom: -10%;
+  animation-delay: 0.5s;
+}
+
+.ornament3 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e7dddd,
+      rgba(215, 0, 0, 0) 20%
+    ),
+    radial-gradient(circle, #ffd700, #ffa500);
+  right: 15%;
+  animation-delay: 1s;
+}
+.ornament6 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e7dddd,
+      rgba(215, 0, 0, 0) 20%
+    ),
+    radial-gradient(circle, #e41b58, #be2b57);
+  right: 6%;
+  bottom: 0;
+  animation-delay: 1s;
+}
+
+/* Additional ornaments for other orbits */
+.orbit2 .ornament4 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e7dddd,
+      rgba(215, 0, 0, 0) 20%
+    ),
+    radial-gradient(circle, #9c27b0, #673ab7);
+  left: 20%;
+  bottom: 1%;
+}
+
+.orbit3 .ornament5 {
+  background: radial-gradient(
+      circle at 30% 30%,
+      #e7dddd,
+      rgba(215, 0, 0, 0) 20%
+    ),
+    radial-gradient(circle, #4caf50, #2e7d32);
+  right: 25%;
+  bottom: -10%;
+  width: clamp(20px, 4vw, 30px);
+  height: clamp(20px, 4vw, 30px);
+}
+/* Sparkle container */
+.sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual sparkle styles */
+.sparkle {
+  position: absolute;
+  width: clamp(5px, 1vw, 10px);
+  height: clamp(5px, 1vw, 10px);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  animation: sparkle-animation 2s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.sparkle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  width: clamp(5px, 1vw, 5px);
+  height: clamp(5px, 1vw, 5px);
+}
+
+.sparkle:nth-child(2) {
+  top: 25%;
+  left: 50%;
+}
+
+.sparkle:nth-child(3) {
+  top: 40%;
+  right: 15%;
+  width: clamp(5px, 1vw, 5px);
+  height: clamp(5px, 1vw, 5px);
+}
+
+.sparkle:nth-child(4) {
+  bottom: 20%;
+  left: 30%;
+}
+
+.sparkle:nth-child(5) {
+  bottom: 10%;
+  right: 25%;
+}
+
+/* Animation for sparkles */
+@keyframes sparkle-animation {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .circle {
+    aspect-ratio: 2.5/1;
+  }
+
+  .orbit1,
+  .orbit2,
+  .orbit3 {
+    border-width: 2px;
+  }
+  .orbit1 {
+    width: calc(90% + 20px);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .circle {
+    aspect-ratio: 2.2/1;
+  }
+
+  .img {
+    width: clamp(60px, 30%, 100px);
+    margin-bottom: -4vh;
+  }
+
+  .ornament {
+    width: 15px;
+    height: 15px;
+  }
+  .orbit1 {
+    width: calc(90% + 40px);
+  }
+}
